@@ -12,6 +12,7 @@ var polygon_img, backgroundImg;
 var score=0;
 var bg = "images/light.jpg";
 function preload(){
+  getBackgroundImage();
   polygon_img=loadImage("images/polygon.png");
   
 }
@@ -68,7 +69,9 @@ function setup() {
 
 }
 function draw() {
-  background(56,44,44); 
+  //background(56,44,44); 
+  if(backgroundImg)
+    background(backgroundImg);
   //Engine.update(engine);
   text(mouseX + ',' + mouseY, 10, 15);
   textSize(20);
